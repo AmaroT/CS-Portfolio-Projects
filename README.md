@@ -10,17 +10,19 @@ This repository serves as a comprehensive showcase of my journey through the Com
 
 ### Grocery Tracker Application
 
-One of the standout projects in this portfolio is the Grocery Tracker application, developed using C++ to solve a practical problem for grocery stores: analyzing and managing sales data. This program tracks the frequency of items purchased, generates comprehensive frequency lists, visualizes data with histograms, and creates backups of the frequency data. It addresses the need for efficient data analysis tools that can help stores optimize their layout and inventory based on actual sales patterns.
+The Grocery Tracker Application was developed to solve a practical problem for grocery stores: analyzing and managing sales data using C++. It tracks item purchase frequencies, generates frequency lists, visualizes data with histograms, and creates backups.
 
-In this project, I particularly excelled in designing a modular class structure that encapsulates the program’s core functionalities, making it both adaptable and maintainable. The use of a map data structure for managing item frequencies allowed for efficient data processing, and I ensured the code was well-documented to support future maintenance and enhancements. Reflecting on this work, I recognize the potential to improve input validation and file I/O operations, which would make the program more robust and scalable. The most challenging aspect was creating a text-based histogram that was both accurate and easy to read, a task I accomplished through research and iterative design. The skills I honed during this project—such as object-oriented programming, efficient data management, and ensuring code readability—are transferable to other projects and will be invaluable as I continue to grow as a developer.
+In this project, I excelled in designing a modular class structure that encapsulated the core functionalities, making the code adaptable and maintainable. Working through the design document was helpful in clearly defining system requirements and logic flow before diving into development. This documentation approach enhanced my focus on data management and ensured that my code met user needs.
+
+If I could revise one aspect, I would enhance input validation and file I/O handling to improve robustness. By implementing more thorough error-checking and using better data structures for file management, the application could be even more scalable and user-friendly.
 
 ### Gaming Room Project
 
-The Gaming Room Project is an OOP-based software application designed for a client called "The Gaming Room," which focuses on creating a multiplayer trivia game environment. The project involved designing a system that supports the creation and management of game rooms, user participation, real-time trivia questions, and score tracking.
+The Gaming Room Project is an OOP-based software application designed for "The Gaming Room," focusing on creating a multiplayer trivia game environment. It supports game room management, user participation, real-time trivia questions, and score tracking.
 
-This project stands out for its comprehensive software design document, which clearly outlined the system architecture, user flows, and technical requirements. I effectively translated client requirements into functional and non-functional specifications, ensuring that the system was user-friendly and scalable. I also created detailed UML diagrams that visually represent the system's components, making the design easier to understand for both technical and non-technical stakeholders.
+I did particularly well in developing a clear and detailed software design document that outlined system architecture, user flows, and functional requirements. This document was extremely helpful in guiding the coding process, as it provided a structured approach to building the core components. The use of UML diagrams facilitated a clearer understanding of component interactions, making the design process smoother.
 
-Reflecting on this project, I see potential improvements in refining the user interface design and enhancing real-time communication for better user engagement. The skills I developed in analyzing user requirements, creating clear design documentation, and implementing core OOP principles will be highly useful in future software engineering projects.
+If I were to improve one aspect, it would be to refine the user interface and enhance real-time communication features to boost user engagement. Understanding user requirements and translating them into the software design was crucial, as it ensured that the final product was intuitive and met user expectations. In future projects, I would use techniques like prototyping and agile development to further refine the design process.
 
 ## Repository Contents
 
