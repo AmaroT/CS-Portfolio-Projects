@@ -18,7 +18,8 @@ Role-Based Authorization: Restricts access based on user roles.
 - Java Development Kit (JDK): Install JDK 8 or higher.
 - Maven: Ensure that Maven is installed and properly configured in Eclipse.
 
-### Setup Instructions
+### IDE Setup Instructions
+### Eclipse IDE
 1. Import the Project:
      - Download the project zip file.
      - Open Eclipse IDE and go to File > Import > Existing Maven Projects.
@@ -33,6 +34,40 @@ Role-Based Authorization: Restricts access based on user roles.
 4. Launch the Application:
    - Click Run to start the server.
    - Open a web browser and visit http://localhost:8080/gameusers to interact with the API.
+
+### Visual Studio Code IDE
+
+1. Install Visual Studio Code:
+  - Download and install Visual Studio Code. 
+2. Install Extensions:
+  - Install the Java Extension Pack from the Extensions Marketplace.
+3. Open the Project:
+  - Go to File > Open Folder.
+  - Select the project directory to open it.
+4. Set Up Maven:
+  - Ensure Maven is installed and configured in VS Code.
+  - Use the terminal in VS Code to run Maven commands, e.g., mvn clean install to build the project.
+5. Run the Application:
+  - Use the built-in terminal to start the server:
+```bash
+java -jar target/your-app.jar server config.yml
+```
+### IntelliJ IDEA Setup
+
+1. Install IntelliJ IDEA:
+  - Download and install IntelliJ IDEA.
+2. Import the Project:
+  - Go to File > Open.
+  - Select the project directory or the pom.xml file to import it as a Maven project.
+3. Build the Project:
+  - Go to the Maven tab on the right side of IntelliJ and click Reload All Maven Projects to load dependencies.
+4. Run Configuration:
+  - Go to Run > Edit Configurations.
+  - Create a new configuration with:
+    - Main class: Your main class (e.g., GameAuthApplication). 
+    - Program Arguments: "server config.yml".
+5. Run the Application:
+  - Click Run or Debug to start the server and visit http://localhost:8080/gameusers.
 ### Usage Instructions
 1. Authentication:
    - The application uses Basic Authentication.
