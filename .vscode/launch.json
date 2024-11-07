@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug HelloWorld",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/CS300/HelloWorld/HelloWorld", 
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/CS300/HelloWorld",
+            "environment": [],
+            "externalConsole": false,
+            "preLaunchTask": "build HelloWorld",
+            "MIMode": "lldb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for lldb",
+                    "text": "settings set target.pretty-printing true",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Debug VectorSorting",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/CS300/VectorSorting/VectorSorting", 
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/CS300/VectorSorting",
+            "environment": [],
+            "externalConsole": false,
+            "preLaunchTask": "build VectorSorting",
+            "MIMode": "lldb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for lldb",
+                    "text": "settings set target.pretty-printing true",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

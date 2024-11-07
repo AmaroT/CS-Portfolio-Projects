@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build HelloWorld",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${workspaceFolder}/CS300/HelloWorld/main.cpp", 
+                "-o",
+                "${workspaceFolder}/CS300/HelloWorld/HelloWorld" 
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Task for building HelloWorld"
+        },
+        {
+            "label": "build VectorSorting",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${workspaceFolder}/CS300/VectorSorting/VectorSorting.cpp",  
+                "-o",
+                "${workspaceFolder}/CS300/VectorSorting/VectorSorting"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true  
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Task for building VectorSorting"
+        }
+    ]
+}
