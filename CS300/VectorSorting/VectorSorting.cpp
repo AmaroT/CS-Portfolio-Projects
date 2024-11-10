@@ -137,6 +137,31 @@ int partition(vector<Bid>& bids, int begin, int end) {
        // else swap the low and high bids (built in vector method)
             // move low and high closer ++low, --high
     //return high;
+
+    int low = begin;
+    int high = end; 
+
+    int mid = begin + (end - begin) / 2;
+    string pivot = bids[mid].title;
+
+    bool done = false;
+    while (!done) {
+        while (bids[low].title < pivot) {
+            ++low;
+        }
+        while (pivot < bids[high].title) {
+            --high;
+        }
+
+        if (low >= high) {
+            done = true;
+        } else {
+            swap(bids[low], bids[high]);
+            ++low;
+            --high;
+        }
+    }
+    return high;
 }
 
 /**
@@ -149,18 +174,13 @@ int partition(vector<Bid>& bids, int begin, int end) {
  * @param end the ending index to sort on
  */
 void quickSort(vector<Bid>& bids, int begin, int end) {
-    //set mid equal to 0
+    if (begin >= end) {
+        return; // Base case: if the range has 1 or 0 elements, it is already sorted
+    }
+    int mid = partition(bids, begin, end);
 
-    /* Base case: If there are 1 or zero bids to sort,
-     partition is already sorted otherwise if begin is greater
-     than or equal to end then return*/
-
-    /* Partition bids into low and high such that
-     midpoint is location of last element in low */
-     
-    // recursively sort low partition (begin to mid)
-
-    // recursively sort high partition (mid+1 to end)
+    quickSort(bids, begin, mid);
+    quickSort(bids, mid + 1, end);
 
 }
 
@@ -175,19 +195,19 @@ void quickSort(vector<Bid>& bids, int begin, int end) {
  *            instance to be sorted
  */
 void selectionSort(vector<Bid>& bids) {
-    //define min as int (index of the current minimum bid)
+    size_t size = bids.size();
 
-    // check size of bids vector
-    // set size_t platform-neutral result equal to bid.size()
-
-    // pos is the position within bids that divides sorted/unsorted
-    // for size_t pos = 0 and less than size -1 
-        // set min = pos
-        // loop over remaining elements to the right of position
-            // if this element's title is less than minimum title
-                // this element becomes the minimum
-        // swap the current minimum with smaller one found
-            // swap is a built in vector method
+    for (size_t pos = 0; pos < size - 1; ++pos) {
+        size_t min = pos;
+        for (size_t j = pos + 1; j < size; ++j) {
+            if (bids[j].title < bids[min].title) {
+                min = j;
+            }
+        }
+        if (min != pos) {
+            swap(bids[pos], bids[min]);
+        }
+    }
 }
 
 /**
@@ -262,9 +282,29 @@ int main(int argc, char* argv[]) {
 
             break;
 
-        // FIXME (1b): Invoke the selection sort and report timing results
+        case 3:
+            // Initilize a timer variable before sorting bids
+            ticks = clock();
 
-        // FIXME (2b): Invoke the quick sort and report timing results
+            // Perform selection sort
+            selectionSort(bids);
+
+            // Calculate elasped time and display result
+            ticks = clock() - ticks;
+            cout << "Selection sort completed in " << ticks * 1.0 / CLOCKS_PER_SEC << " seconds" << endl;
+            break;
+
+        case 4:
+            // Initialize a timer variable before sorting bids
+            ticks = clock();
+
+            // Perform quick sort
+            quickSort(bids, 0, bids.size() - 1);
+
+            // Calculated elasped time and display result
+            ticks = clock() - ticks;
+            cout << "Quick sort completed in " << ticks * 1.0 / CLOCKS_PER_SEC << " seconds" << endl;
+            break;
 
         }
     }
