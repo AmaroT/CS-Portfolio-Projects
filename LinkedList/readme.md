@@ -36,7 +36,7 @@ bash
 Copy code
 brew install cmake
 ```
-- Create a build directory, navigate to it, and run 'cmake':
+- Create a build directory, navigate to it, and run `cmake`:
 ```plaintext
 bash
 Copy code
@@ -63,8 +63,8 @@ Upon running the program, you will see a menu with options to:
 ## Loading Bids
 To load bids, choose option 2 in the menu. You will then be prompted to select one of the following files:
 
-- 'eBid_Monthly_Sales.csv' - The larger dataset with 12,023 bids.
-- 'eBid_Monthly_Sales_Dec_2016.csv' - A smaller dataset with 76 bids.
+- `eBid_Monthly_Sales.csv` - The larger dataset with 12,023 bids.
+- `eBid_Monthly_Sales_Dec_2016.csv` - A smaller dataset with 76 bids.
   
 The program will display the total number of bids loaded and the time taken to load them.
 
@@ -80,7 +80,7 @@ The program will display the total number of bids loaded and the time taken to l
 ## Key Challenges and Solutions
 1. Environment Setup on Mac (Apple Silicon): Configuring IntelliJ to build C++ on Mac with Apple Silicon required downloading and setting up tools like CMake and Homebrew for dependencies.
 2. Dynamic File Selection: Modifying the code to prompt for a file selection during runtime enhanced user flexibility.
-3. Pointer Management: Carefully handling pointers in linked list operations (such as updating 'head' and 'tail' pointers) ensured list integrity, particularly for 'Remove' and 'Append' functions.
+3. Pointer Management: Carefully handling pointers in linked list operations (such as updating `head` and `tail` pointers) ensured list integrity, particularly for `Remove` and `Append` functions.
 
 ## Requirements
 - C++ compiler (GCC or Clang)
@@ -88,7 +88,7 @@ The program will display the total number of bids loaded and the time taken to l
 - CSV parser library (provided in the project)
 
 ## License
-This project is licensed under the MIT License. See 'License.txt' for more details.
+This project is licensed under the MIT License. See `License.txt` for more details.
 
 
 
