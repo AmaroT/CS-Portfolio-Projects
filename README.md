@@ -27,13 +27,19 @@ The ContactService project is a Java-based application that provides an in-memor
 
 In this project, I excelled in applying rigorous unit testing to ensure the robustness of the Contact and ContactService classes. I applied best practices in validation, encapsulation, and in-memory data management, ensuring that each contact's fields were validated against requirements. The use of JUnit was instrumental in verifying the functionality and stability of each component.
 
-Project is still in progress, upon completetion of project, I will review and provide possible areas of improvement. 
+Project is still in progress; upon completion, I will review and provide possible areas of improvement.
+
+### LinkedList Project
+The LinkedList Project is a C++ application that manages bid data for a municipal auction system using a singly linked list. This project demonstrates my skills in data structures, memory management, and file handling. The program allows users to load bid data from CSV files, append, prepend, search, and remove bids, and provides a dynamic menu for user interaction.
+
+During this project, I encountered challenges with configuring the environment on my Mac with Apple Silicon, using IntelliJ and the command line interface for building the project. I resolved this by setting up essential tools such as CMake and Homebrew to ensure compatibility. Additionally, I modified the code to prompt users to select a file to load dynamically, which enhanced the program's flexibility. Through this project, I deepened my understanding of linked lists and learned how to manage data dynamically in C++.
 
 ## Repository Contents
 
 - **Grocery Tracker Application**: A C++ program for tracking and analyzing grocery store sales data, with a focus on maintainability, efficiency, and usability.
 - **Gaming Room Project**: An OOP-based software application for managing a multiplayer trivia game environment, demonstrating user-centric design, system architecture planning, and effective communication of software requirements.
 - **ContactService Project**: A Java application for managing contact data in a mobile app, with in-memory data storage and unit tests for field constraints and CRUD operations.
+- **LinkedList Project**: A C++ application using a linked list to manage bid data, showcasing dynamic memory handling, file loading, and menu-driven user interaction.
 
 ## Installation and Setup
 For each project in this repository, detailed installation and setup instructions are provided in their respective directories.
