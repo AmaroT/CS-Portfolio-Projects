@@ -141,13 +141,14 @@ void HashTable::Insert(Bid bid) {
     unsigned int key = hash(stoi(bid.bidId));
     Node* newNode = new Node(bid, key);
 
-    if (nodes[key].key) == UINT_MAX) {
-    nodes[key] = *newNode;
+    if (nodes[key].key == UINT_MAX) {
+        nodes[key] = *newNode;
     } else {
-    Node* current = &nodes[key];
-    while (current->next != nullptr) {
-    }
-    current ->next = newNode;
+        Node* current = &nodes[key];
+        while (current->next != nullptr) {
+            current = current->next;
+        }
+        current ->next = newNode;
    }
 }
 
@@ -201,9 +202,7 @@ void HashTable::Remove(string bidId) {
  * @param bidId The bid id to search for
  */
 Bid HashTable::Search(string bidId) {
-    Bid bid;
-
-    unsigned int key = hash(stoi(bidId));
+   unsigned int key = hash(stoi(bidId));
     Node* current = &nodes[key];
 
     while (current != nullptr) {
@@ -213,7 +212,7 @@ Bid HashTable::Search(string bidId) {
         current = current->next;
     }
 
-    return bid(); // Return an empty bid if not found
+    return Bid(); // Return an empty bid if not found
 }
 
 //============================================================================
