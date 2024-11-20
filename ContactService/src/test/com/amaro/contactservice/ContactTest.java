@@ -51,4 +51,8 @@ public class ContactTest {
         });
         assertEquals("Invalid address. Must not be null and max length 30 characters.", exception.getMessage());
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 459aac8fbc72598a999a07e7ee59cfc1c8b3078a
