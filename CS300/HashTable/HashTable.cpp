@@ -1,8 +1,8 @@
 //============================================================================
 // Name        : HashTable.cpp
-// Author      : Your Name
+// Author      : Amaro Terrazas
 // Version     : 1.0
-// Copyright   : Copyright © 2023 SNHU COCE
+// Copyright   : Copyright ï¿½ 2023 SNHU COCE
 // Description : Lab 4-2 Hash Table
 //============================================================================
 
@@ -91,9 +91,7 @@ public:
  * Default constructor
  */
 HashTable::HashTable() {
-    // FIXME (1): Initialize the structures used to hold bids
-    
-    // Initalize node structure by resizing tableSize
+    nodes.resize(tableSize); // Resize the vector to the default size
 }
 
 /**
@@ -102,8 +100,8 @@ HashTable::HashTable() {
  * by reducing collisions without wasting memory.
  */
 HashTable::HashTable(unsigned int size) {
-    // invoke local tableSize to size with this->
-    // resize nodes size
+  tableSize = size;
+  nodes.resize(tableSize); // Resize the vector to the specified size
 }
 
 
@@ -111,9 +109,14 @@ HashTable::HashTable(unsigned int size) {
  * Destructor
  */
 HashTable::~HashTable() {
-    // FIXME (2): Implement logic to free storage when class is destroyed
-    
-    // erase nodes beginning
+    for (Node &node : nodes) {
+        Node* current = node.next;
+        while (current != nullptr){
+            Node* temp = current;
+            current = current ->next;
+            delete temp;
+        }
+    }
 }
 
 /**
@@ -126,8 +129,7 @@ HashTable::~HashTable() {
  * @return The calculated hash
  */
 unsigned int HashTable::hash(int key) {
-    // FIXME (3): Implement logic to calculate a hash value
-    // return key tableSize
+    return key % tableSize; // Modulo operation to constrain within table size
 }
 
 /**
@@ -136,29 +138,34 @@ unsigned int HashTable::hash(int key) {
  * @param bid The bid to insert
  */
 void HashTable::Insert(Bid bid) {
-    // FIXME (4): Implement logic to insert a bid
-    // create the key for the given bid
-    // retrieve node using key
-    // if no entry found for the key
-        // assign this node to the key position
-    // else if node is not used
-         // assing old node key to UNIT_MAX, set to key, set old node to bid and old node next to null pointer
-    // else find the next open node
-            // add new newNode to end
+    unsigned int key = hash(stoi(bid.bidId));
+    Node* newNode = new Node(bid, key);
+
+    if (nodes[key].key) == UINT_MAX) {
+    nodes[key] = *newNode;
+    } else {
+    Node* current = &nodes[key];
+    while (current->next != nullptr) {
+    }
+    current ->next = newNode;
+   }
 }
 
 /**
  * Print all bids
  */
 void HashTable::PrintAll() {
-    // FIXME (5): Implement logic to print all bids
-    // for node begin to end iterate
-    //   if key not equal to UINT_MAx
-            // output key, bidID, title, amount and fund
-            // node is equal to next iter
-            // while node not equal to nullptr
-               // output key, bidID, title, amount and fund
-               // node is equal to next node
+    for (Node &node : nodes) {
+        if (node.key != UINT_MAX) {
+            Node* current = &node;
+            while (current != nullptr) {
+                cout << current->key << ": " << current->bid.bidId << " | "
+                     << current->bid.title << " | " << current->bid.amount << " | "
+                     << current->bid.fund << endl;
+                current = current->next;
+            }
+        }
+    }
 
 }
 
@@ -168,9 +175,24 @@ void HashTable::PrintAll() {
  * @param bidId The bid id to search for
  */
 void HashTable::Remove(string bidId) {
-    // FIXME (6): Implement logic to remove a bid
-    // set key equal to hash atoi bidID cstring
-    // erase node begin and key
+    unsigned int key = hash(stoi(bidId));
+    Node* current = &nodes[key];
+    Node* previous = nullptr;
+
+    while (current != nullptr && current->bid.bidId != bidId) {
+        previous = current;
+        current = current->next;
+    }
+
+    if (current != nullptr) {
+        if (previous == nullptr) {
+            // Remove the first node in the chain
+            nodes[key] = *(current->next);
+        } else {
+            previous->next = current->next;
+        }
+        delete current;
+    }
 }
 
 /**
@@ -181,19 +203,17 @@ void HashTable::Remove(string bidId) {
 Bid HashTable::Search(string bidId) {
     Bid bid;
 
-    // FIXME (7): Implement logic to search for and return a bid
+    unsigned int key = hash(stoi(bidId));
+    Node* current = &nodes[key];
 
-    // create the key for the given bid
-    // if entry found for the key
-         //return node bid
+    while (current != nullptr) {
+        if (current->bid.bidId == bidId) {
+            return current->bid;
+        }
+        current = current->next;
+    }
 
-    // if no entry found for the key
-      // return bid
-    // while node not equal to nullptr
-        // if the current node matches, return it
-        //node is equal to next node
-
-    return bid;
+    return bid(); // Return an empty bid if not found
 }
 
 //============================================================================
