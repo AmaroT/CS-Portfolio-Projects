@@ -23,6 +23,7 @@ public class ContactTest {
         });
         assertEquals("Invalid contact ID. Must not be null and max length 10 characters.", exception.getMessage());
     }
+
     @Test
     public void testInvalidFirstName() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -30,6 +31,7 @@ public class ContactTest {
         });
         assertEquals("Invalid first name. Must not be null and max length 10 characters.", exception.getMessage());
     }
+
     @Test
     public void testInvalidLastName() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -37,6 +39,7 @@ public class ContactTest {
         });
         assertEquals("Invalid last name. Must not be null and max length 10 characters.", exception.getMessage());
     }
+
     @Test
     public void testInvalidPhone() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -44,6 +47,7 @@ public class ContactTest {
         });
         assertEquals("Invalid phone number. Must be exactly 10 digits.", exception.getMessage());
     }
+
     @Test
     public void testInvalidAddress() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -51,8 +55,4 @@ public class ContactTest {
         });
         assertEquals("Invalid address. Must not be null and max length 30 characters.", exception.getMessage());
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 459aac8fbc72598a999a07e7ee59cfc1c8b3078a
