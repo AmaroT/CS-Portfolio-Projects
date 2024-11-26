@@ -2,7 +2,7 @@
 // Name        : BinarySearchTree.cpp
 // Author      : Amaro Terrazas
 // Version     : 1.0
-// Copyright   : Copyright � 2023 SNHU COCE
+// Copyright   : Copyright © 2023 SNHU COCE
 // Description : Lab 5-2 Binary Search Tree
 //============================================================================
 
@@ -22,14 +22,16 @@ double strToDouble(string str, char ch);
 // Define a structure to hold bid information
 struct Bid {
     string bidId; // Unique identifier
-    string title;
-    string fund;
-    double amount;
+    string title; // Title of the bid
+    string fund;  // Associated fund
+    double amount; // Bid amount
 
+    // Default constructor
     Bid() {
         amount = 0.0;
     }
 };
+void displayBid(Bid bid);
 
 // Internal structure for tree node
 struct Node {
@@ -55,11 +57,12 @@ struct Node {
 
 /**
  * Define a class containing data members and methods to
- * implement a binary search tree
+ * implement a binary search tree.
  */
 class BinarySearchTree {
+
 private:
-    Node* root;
+    Node* root; // Root node of the tree
 
     // Private recursive helper methods
     void addNode(Node* node, Bid bid);
@@ -70,14 +73,14 @@ private:
     Node* removeNode(Node* node, string bidId);
 
 public:
-    BinarySearchTree();
-    virtual ~BinarySearchTree();
-    void InOrder();
-    void PostOrder();
-    void PreOrder();
-    void Insert(Bid bid);
-    void Remove(string bidId);
-    Bid Search(string bidId);
+    BinarySearchTree();       // Constructor
+    virtual ~BinarySearchTree();  // Destructor
+    void InOrder();           // Public in-order traversal
+    void PostOrder();         // Public post-order traversal
+    void PreOrder();          // Public pre-order traversal
+    void Insert(Bid bid);     // Insert a bid
+    void Remove(string bidId); // Remove a bid
+    Bid Search(string bidId); // Search for a bid
 };
 
 /**
@@ -106,7 +109,7 @@ void BinarySearchTree::postOrderDelete(Node* node) {
 }
 
 /**
- * Traverse the tree in order (public method)
+ * Public method to traverse the tree in order
  */
 void BinarySearchTree::InOrder() {
     inOrder(root);
@@ -118,13 +121,13 @@ void BinarySearchTree::InOrder() {
 void BinarySearchTree::inOrder(Node* node) {
     if (node != nullptr) {
         inOrder(node->left);
-        displayBid(node->bid);
+        displayBid(node->bid); // Display the bid
         inOrder(node->right);
     }
 }
 
 /**
- * Traverse the tree in post-order (public method)
+ * Public method to traverse the tree in post-order
  */
 void BinarySearchTree::PostOrder() {
     postOrder(root);
@@ -137,12 +140,12 @@ void BinarySearchTree::postOrder(Node* node) {
     if (node != nullptr) {
         postOrder(node->left);
         postOrder(node->right);
-        displayBid(node->bid);
+        displayBid(node->bid); // Display the bid
     }
 }
 
 /**
- * Traverse the tree in pre-order (public method)
+ * Public method to traverse the tree in pre-order
  */
 void BinarySearchTree::PreOrder() {
     preOrder(root);
@@ -153,14 +156,14 @@ void BinarySearchTree::PreOrder() {
  */
 void BinarySearchTree::preOrder(Node* node) {
     if (node != nullptr) {
-        displayBid(node->bid);
+        displayBid(node->bid); // Display the bid
         preOrder(node->left);
         preOrder(node->right);
     }
 }
 
 /**
- * Insert a bid (public method)
+ * Public method to insert a bid
  */
 void BinarySearchTree::Insert(Bid bid) {
     if (root == nullptr) {
@@ -175,14 +178,14 @@ void BinarySearchTree::Insert(Bid bid) {
  */
 void BinarySearchTree::addNode(Node* node, Bid bid) {
     if (bid.bidId < node->bid.bidId) {
-        // Go to left subtree
+        // Traverse left subtree
         if (node->left == nullptr) {
             node->left = new Node(bid); // Create a new node if left is empty
         } else {
             addNode(node->left, bid); // Recurse down the left subtree
         }
     } else {
-        // Go to right subtree
+        // Traverse right subtree
         if (node->right == nullptr) {
             node->right = new Node(bid); // Create a new node if right is empty
         } else {
@@ -192,7 +195,7 @@ void BinarySearchTree::addNode(Node* node, Bid bid) {
 }
 
 /**
- * Remove a bid (public method)
+ * Public method to remove a bid
  */
 void BinarySearchTree::Remove(string bidId) {
     root = removeNode(root, bidId);
@@ -205,9 +208,9 @@ Node* BinarySearchTree::removeNode(Node* node, string bidId) {
     if (node == nullptr) return node; // Node not found
 
     if (bidId < node->bid.bidId) {
-        node->left = removeNode(node->left, bidId);
+        node->left = removeNode(node->left, bidId); // Traverse left subtree
     } else if (bidId > node->bid.bidId) {
-        node->right = removeNode(node->right, bidId);
+        node->right = removeNode(node->right, bidId); // Traverse right subtree
     } else {
         // Node found
         if (node->left == nullptr && node->right == nullptr) {
@@ -252,16 +255,11 @@ Bid BinarySearchTree::Search(string bidId) {
     return Bid(); // Return an empty bid if not found
 }
 
-//============================================================================
-// Static methods used for testing
-//============================================================================
-
 /**
- * Display the bid information to the console (std::out)
+ * Display a bid's details
  */
 void displayBid(Bid bid) {
-    cout << bid.bidId << ": " << bid.title << " | " << bid.amount << " | "
-         << bid.fund << endl;
+    cout << bid.bidId << ": " << bid.title << " | " << bid.amount << " | " << bid.fund << endl;
 }
 
 /**
@@ -285,7 +283,6 @@ void loadBids(string csvPath, BinarySearchTree* bst) {
             bid.title = file[i][0];
             bid.fund = file[i][8];
             bid.amount = strToDouble(file[i][4], '$');
-
             bst->Insert(bid);
         }
     } catch (csv::Error& e) {
@@ -321,7 +318,6 @@ int main(int argc, char* argv[]) {
     }
 
     clock_t ticks;
-
     BinarySearchTree* bst = new BinarySearchTree();
 
     int choice = 0;
