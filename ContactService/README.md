@@ -1,7 +1,7 @@
-# ContactService and TaskService
+# ContactService, TaskService, and AppointmentService
 
 ## Project Overview
-The `ContactService` and `TaskService` projects are Java-based applications designed to manage contact and task information, respectively, for a mobile application. These services allow adding, updating, and deleting records while enforcing certain constraints on each field. Both projects focus on implementing in-memory data structures and unit tests (without a database or user interface). These projects are part of a coursework assignment.
+The `ContactService`, `TaskService`, and `AppointmentService` projects are Java-based applications designed to manage contact, task, and appointment information, respectively, for a mobile application. These services allow adding, updating, and deleting records while enforcing certain constraints on each field. All projects focus on implementing in-memory data structures and unit tests (without a database or user interface). These projects are part of a coursework assignment.
 
 ---
 
@@ -43,6 +43,23 @@ The `TaskService` class manages multiple `Task` objects using the following func
 
 ---
 
+## AppointmentService
+
+### Class Structure
+
+#### Appointment Class
+The `Appointment` class represents an individual appointment and includes the following attributes:
+- **appointmentID**: A unique identifier for the appointment. Must be a non-null string, up to 10 characters, and is immutable once set.
+- **appointmentDate**: The date of the appointment. Must be a non-null `Date` object and cannot be in the past.
+- **description**: The description of the appointment. Must be a non-null string, up to 50 characters.
+
+#### AppointmentService Class
+The `AppointmentService` class manages multiple `Appointment` objects using the following functionality:
+- **addAppointment(Appointment appointment)**: Adds an appointment with a unique `appointmentID`.
+- **deleteAppointment(String appointmentID)**: Deletes an appointment based on the `appointmentID`.
+
+---
+
 ## Project Requirements
 These projects require:
 - JDK 8 or later
@@ -53,6 +70,6 @@ These projects require:
 ## Setup Instructions
 
 1. **Clone or Download the Repository**:
-   ```bash
-   git clone https://github.com/AmaroT/ContactService.git
-   cd ContactService
+   ```
+   git clone https://github.com/AmaroT/CS-Portfolio-Projects.git
+   cd CS-Portfolio-Projects
