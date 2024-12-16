@@ -1,0 +1,175 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > TaskService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.amaro.contactservice</a>
+</div>
+
+<h1>Coverage Summary for Class: TaskService (com.amaro.contactservice)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TaskService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    61.1%
+  </span>
+  <span class="absValue">
+    (11/18)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    94.7%
+  </span>
+  <span class="absValue">
+    (18/19)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;// Author: Amaro Terrazas
+&nbsp;package com.amaro.contactservice;
+&nbsp;
+&nbsp;import java.util.HashMap;
+&nbsp;import java.util.Map;
+&nbsp;
+&nbsp;public class TaskService {
+&nbsp;    // In-memory storage for tasks, with TaskID as the key
+&nbsp;    private final Map&lt;String, Task&gt; tasks;
+&nbsp;
+&nbsp;    // Constructor
+<b class="fc">&nbsp;    public TaskService() {</b>
+<b class="fc">&nbsp;        tasks = new HashMap&lt;&gt;(); // Initialize the HashMap to store Task objects</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Add new task to the service
+&nbsp;    public boolean addTask(Task task) {
+&nbsp;        // Check if task is null or taskID already exists in the map
+<b class="pc">&nbsp;        if (task == null || tasks.containsKey(task.getTaskID())) {</b>
+<b class="fc">&nbsp;            return false; // Task cannot be added</b>
+&nbsp;        }
+<b class="fc">&nbsp;        tasks.put(task.getTaskID(), task); // Add the task to the map</b>
+<b class="fc">&nbsp;        return true; // Task successfully added</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Delete a Task by its taskID
+&nbsp;    public boolean deleteTask(String taskID) {
+&nbsp;        // Check if taskID is null or does not exist in the map
+<b class="pc">&nbsp;        if (taskID == null || !tasks.containsKey(taskID)) {</b>
+<b class="nc">&nbsp;            return false; // Task cannot be deleted</b>
+&nbsp;        }
+<b class="fc">&nbsp;        tasks.remove(taskID);</b>
+<b class="fc">&nbsp;        return true; // Task successfully deleted</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Update the fields of an existing task by its taskID
+&nbsp;    public boolean updateTask(String taskID, String name, String description) {
+<b class="fc">&nbsp;        Task task = tasks.get(taskID); // Retrieve the task by taskID</b>
+<b class="fc">&nbsp;        if (task == null) {</b>
+<b class="fc">&nbsp;            return false; // Task not found</b>
+&nbsp;        }
+&nbsp;        // Update the name if it is valid
+<b class="pc">&nbsp;        if (name != null &amp;&amp; name.length() &lt;= 20) {</b>
+<b class="fc">&nbsp;            task.setName(name);</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        // Update the description if it is valid
+<b class="pc">&nbsp;        if (description != null &amp;&amp; description.length() &lt;= 50) {</b>
+<b class="fc">&nbsp;            task.setDescription(description);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return true; // Task successfully updated</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Retrieve a task by its taskID (for testing purposes)
+&nbsp;    public Task getTask(String taskID) {
+<b class="fc">&nbsp;        return tasks.get(taskID); // Return the task or null if not found</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-03 12:02</div>
+</div>
+</body>
+</html>

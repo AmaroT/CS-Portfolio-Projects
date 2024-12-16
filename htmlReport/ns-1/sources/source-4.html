@@ -1,0 +1,179 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ContactService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.amaro.contactservice</a>
+</div>
+
+<h1>Coverage Summary for Class: ContactService (com.amaro.contactservice)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ContactService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    57.1%
+  </span>
+  <span class="absValue">
+    (16/28)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95.7%
+  </span>
+  <span class="absValue">
+    (22/23)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;// Author: Amaro Terrazas
+&nbsp;package com.amaro.contactservice;
+&nbsp;import java.util.HashMap;
+&nbsp;import java.util.Map;
+&nbsp;
+&nbsp;public class ContactService {
+&nbsp;    // In-memory storage for contacts, using contactID as key
+&nbsp;    private final Map&lt;String, Contact&gt; contacts;
+&nbsp;
+&nbsp;    // Constructor
+<b class="fc">&nbsp;    public ContactService() {</b>
+<b class="fc">&nbsp;        contacts = new HashMap&lt;&gt;();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Add a new contact
+&nbsp;    public boolean addContact(Contact contact) {
+<b class="pc">&nbsp;        if (contact == null || contacts.containsKey(contact.getContactID())) {</b>
+<b class="fc">&nbsp;            return false; // Contact does not exist</b>
+&nbsp;        }
+<b class="fc">&nbsp;        contacts.put(contact.getContactID(), contact);</b>
+<b class="fc">&nbsp;        return true;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Delete a contact by contactID
+&nbsp;    public boolean deleteContact(String contactID) {
+<b class="pc">&nbsp;        if (contactID == null || !contacts.containsKey(contactID)) {</b>
+<b class="nc">&nbsp;            return false; // contactID does not exist</b>
+&nbsp;        }
+<b class="fc">&nbsp;        contacts.remove(contactID);</b>
+<b class="fc">&nbsp;        return true;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Update contact fields by contactID
+&nbsp;    public boolean updateContact(String contactID, String firstName, String lastName, String phone, String address) {
+<b class="fc">&nbsp;        Contact contact = contacts.get(contactID);</b>
+&nbsp;
+<b class="fc">&nbsp;        if (contact == null) {</b>
+<b class="fc">&nbsp;            return false; // Contact not found</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        // Update only if the values are valid
+<b class="pc">&nbsp;        if (firstName != null &amp;&amp; firstName.length() &lt;= 10) {</b>
+<b class="fc">&nbsp;            contact.setFirstName(firstName);</b>
+&nbsp;        }
+&nbsp;
+<b class="pc">&nbsp;        if (lastName != null &amp;&amp; lastName.length() &lt;= 10) {</b>
+<b class="fc">&nbsp;            contact.setLastName(lastName);</b>
+&nbsp;        }
+&nbsp;
+<b class="pc">&nbsp;        if (phone != null &amp;&amp; phone.length() &lt;= 10 &amp;&amp; phone.matches(&quot;\\d+&quot;)) {</b>
+<b class="fc">&nbsp;            contact.setPhone(phone);</b>
+&nbsp;        }
+<b class="pc">&nbsp;        if (address != null &amp;&amp; address.length() &lt;= 30) {</b>
+<b class="fc">&nbsp;            contact.setAddress(address);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return true;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Get contact by contactID (for testing purposes)
+&nbsp;    public Contact getContact(String contactID) {
+<b class="fc">&nbsp;        return contacts.get(contactID);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-03 12:02</div>
+</div>
+</body>
+</html>
