@@ -73,3 +73,18 @@ These projects require:
    ```
    git clone https://github.com/AmaroT/CS-Portfolio-Projects.git
    cd CS-Portfolio-Projects
+   
+---
+### How to Ensure Functionality and Security
+
+To ensure functionality, comprehensive unit tests have been developed using JUnit to verify the behavior of all methods in each service. Tests are designed to cover both valid and edge cases, ensuring robustness. For security, the code enforces strict validation for all input fields, preventing invalid or malicious data from being processed or stored.
+
+### Incorporating User Needs into the Program
+
+User needs were interpreted through the functional requirements of managing contacts, tasks, and appointments. Features such as field length constraints, unique identifiers, and descriptive attributes were implemented to align with typical user expectations for mobile applications. Iterative testing and feedback loops ensured that these needs were met effectively.
+
+### Approach to Software Design
+
+The software was designed using object-oriented principles to promote modularity and maintainability. Each class is responsible for a specific type of data, while service classes manage operations on those data objects. This separation of concerns simplifies debugging, testing, and future enhancements. Unit tests were incorporated into the design process to ensure that functionality aligns with specifications from the outset.
+
+
