@@ -50,6 +50,21 @@ The Binary Search Tree Project is a C++ application that manages course data for
 
 ---
 
+### Advising Assistance Project
+The Advising Assistance Project is a C++ command-line application designed to assist academic advisors in efficiently managing course information.
+
+- **Features**:
+    - Load course data from a CSV file into a Binary Search Tree (BST).
+    - Print an alphanumeric list of all courses in the Computer Science program.
+    - Search for a specific course by its course number and display its details, including prerequisites.
+- **Strengths**:
+    - Implemented in-memory storage using a Binary Search Tree for efficient search and traversal.
+    - Successfully designed a menu-driven interface that ensures usability and accessibility.
+- **Potential Improvements**:
+    - Enhance error handling for invalid file formats and add the capability to update or delete course information dynamically.
+
+---
+
 ## Repository Contents
 
 - **Grocery Tracker Application**: A C++ program for tracking and analyzing grocery store sales data, emphasizing maintainability, efficiency, and usability.
@@ -57,6 +72,10 @@ The Binary Search Tree Project is a C++ application that manages course data for
 - **ContactService Project**: A Java application for managing contact data in a mobile app, incorporating in-memory data storage and robust unit tests for field constraints and CRUD operations.
 - **LinkedList Project**: A C++ application utilizing a linked list to manage bid data, showcasing dynamic memory handling, file loading, and menu-driven user interaction.
 - **Binary Search Tree Project**: A C++ application leveraging a binary search tree to manage and organize bid data for municipal property auctions.
+- **Advising Assistance Project**: A C++ application that uses a Binary Search Tree to manage and display course information for a university advising system.
 
 ## Installation and Setup
 For each project in this repository, detailed installation and setup instructions are provided in their respective directories.
+
+- Ensure you have the appropriate compilers and tools for each project (e.g., GCC for C++ or a Java IDE for Java projects).
+- Refer to individual project directories for specific build and run instructions.
