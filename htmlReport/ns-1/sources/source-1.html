@@ -1,0 +1,157 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Appointment</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.amaro.contactservice</a>
+</div>
+
+<h1>Coverage Summary for Class: Appointment (com.amaro.contactservice)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Appointment</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (9/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (13/13)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.amaro.contactservice;
+&nbsp;
+&nbsp;import java.util.Date;
+&nbsp;
+&nbsp;public class Appointment {
+&nbsp;    private final String appointmentID; // Unique appointment ID
+&nbsp;    private final Date appointmentDate; // Date of the appointment
+&nbsp;    private final String description; // Description of the appointment
+&nbsp;
+&nbsp;    // Constructor
+<b class="fc">&nbsp;    public Appointment(String appointmentID, Date appointmentDate, String description) {</b>
+&nbsp;        // Validate appointmentID
+<b class="pc">&nbsp;        if (appointmentID == null || appointmentID.length() &gt; 10) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Invalid appointment ID. Must not be null and max 10 characters.&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        this.appointmentID = appointmentID;</b>
+&nbsp;
+&nbsp;        // Validate appointmentDate
+<b class="pc">&nbsp;        if (appointmentDate == null || appointmentDate.before(new Date())) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Invalid appointment date. Must not be null or in the past.&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        this.appointmentDate = appointmentDate;</b>
+&nbsp;
+&nbsp;        // Validate description
+<b class="pc">&nbsp;        if (description == null || description.length() &gt; 50) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Invalid description. Must not be null and max 50 characters.&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        this.description = description;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Getters
+&nbsp;    public String getAppointmentID() {
+<b class="fc">&nbsp;        return appointmentID;</b>
+&nbsp;    }
+&nbsp;    public Date getAppointmentDate(){
+<b class="fc">&nbsp;        return appointmentDate;</b>
+&nbsp;    }
+&nbsp;    public String getDescription() {
+<b class="fc">&nbsp;        return description;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-03 12:02</div>
+</div>
+</body>
+</html>

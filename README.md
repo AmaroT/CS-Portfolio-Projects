@@ -41,11 +41,12 @@ The LinkedList Project is a C++ application managing bid data for a municipal au
 ---
 
 ### Binary Search Tree Project
-The Binary Search Tree Project is a C++ application that manages bid data for municipal property auctions using a binary search tree data structure. This project emphasizes algorithm efficiency, dynamic memory management, and file handling. The program allows users to load bids from CSV files, search for specific bids, insert new bids, and remove bids.
+The Binary Search Tree Project is a C++ application that manages course data for academic advisors at ABC University. Using a binary search tree (BST) data structure, the program allows users to load course data from a CSV file, print all courses in alphanumeric order, and display specific course information, including prerequisites.
 
-- **Strengths**: Successfully implemented recursive methods for tree traversal (in-order, pre-order, post-order), insertion, search, and removal. The project demonstrated my ability to optimize data management and design modular code using object-oriented principles.
-- **Challenges**: Encountered errors during environment setup on Apple Silicon and difficulties debugging recursive tree operations. These were resolved by carefully examining code logic, ensuring proper memory allocation and deallocation, and configuring CMake for compatibility.
-- **Potential Improvements**: Further optimize the removal logic to handle edge cases more effectively and enhance input validation for user-provided data.
+- **Strengths**: Implemented a dynamic menu-driven system to handle file input, tree traversal (in-order), and course lookups efficiently. Recursive methods for searching and insertion optimized data management. The program adheres to object-oriented principles, ensuring modular and maintainable code.
+- **Challenges**: Initially faced issues with CSV file parsing, blank prerequisites, and ensuring proper memory management during tree operations. By debugging incrementally and refining parsing logic, I resolved these challenges to ensure accurate handling of the data file.
+- **Potential Improvements**: Enhance the system by adding robust error handling for missing or invalid data in the input file. Future iterations could include support for updating and deleting courses dynamically, as well as advanced traversal options for additional queries.
+
 
 ---
 
