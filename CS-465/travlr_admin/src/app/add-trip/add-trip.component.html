@@ -1,0 +1,31 @@
+<h2>Add New Trip</h2>
+
+<form [formGroup]="addForm" (ngSubmit)="onSubmit()" novalidate>
+  <div>
+    <label>Code: <input formControlName="code" required /></label>
+  </div>
+  <div>
+    <label>Name: <input formControlName="name" required /></label>
+  </div>
+  <div>
+    <label>Length: <input formControlName="length" required /></label>
+  </div>
+  <div>
+    <label>Start Date: <input type="date" formControlName="start" required /></label>
+  </div>
+  <div>
+    <label>Resort: <input formControlName="resort" required /></label>
+  </div>
+  <div>
+    <label>Price per Person ($): <input type="number" formControlName="perPerson" required /></label>
+  </div>
+  <div>
+    <label>Image URL: <input formControlName="image" /></label>
+  </div>
+  <div>
+    <label>Description: <textarea formControlName="description" required></textarea></label>
+  </div>
+
+  <button type="submit" [disabled]="addForm.invalid">Add Trip</button>
+  <button type="button" (click)="router.navigate(['/trips'])">Cancel</button>
+</form>

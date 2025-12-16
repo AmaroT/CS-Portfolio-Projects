@@ -1,0 +1,40 @@
+<div class="container mt-5">
+  <h2>Edit Trip</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="mt-4">
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input class="form-control" formControlName="name" placeholder="Name">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Resort</label>
+      <input class="form-control" formControlName="resort" placeholder="Resort">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Length (e.g. 7 days)</label>
+      <input class="form-control" formControlName="length" placeholder="Length (e.g. 7 days)">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Start Date</label>
+      <input class="form-control" type="date" formControlName="start">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Price per Person</label>
+      <input class="form-control" type="number" formControlName="perPerson" placeholder="Price">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Image URL</label>
+      <input class="form-control" formControlName="image" placeholder="Image URL">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea class="form-control" rows="4" formControlName="description" placeholder="Description"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success me-2" [disabled]="editForm.invalid">
+      Save Trip
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="cancel()">
+      Cancel
+    </button>
+  </form>
+</div>
