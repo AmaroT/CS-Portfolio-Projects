@@ -24,5 +24,3 @@ These skills make me more marketable: I can now deliver scalable, secure web app
 
 **GitHub Repository:** https://github.com/AmaroT/CS-Portfolio-Projects/tree/main/CS-465/travlr
 
-(Word count: 498)
-
