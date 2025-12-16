@@ -1,0 +1,49 @@
+# Node.js / Express
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json   # Optional — many include it, but if you want reproducible installs, commit it
+.env                # Critical — never commit environment variables (DB URI, JWT secret, etc.)
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+.nyc_output
+
+# Build outputs
+dist/
+build/
+
+# Angular specific (in travlr-admin folder)
+travlr-admin/node_modules/
+travlr-admin/dist/
+travlr-admin/.angular/
+travlr-admin/tmp/
+
+# Optional: Ignore OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Miscellaneous
+*.tgz
+*.zip
