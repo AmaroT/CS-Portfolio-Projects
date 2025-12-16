@@ -67,10 +67,13 @@ JSON serves as the interchange format between frontend and backend. The Express 
 - Admin SPA: http://localhost:4200
 
 ## Repository Structure
-    ```bash
-    travlr/
-├── app.js                  # Main Express server
-├── app_api/                # REST API controllers and routes
+```    
+travlr/
+├──app.js                  # Main Express 
+├──server
+├──app_api/                # REST 
+
+API controllers and routes
 ├── app_server/             # Customer site (routes, controllers, views)
 ├── public/                 # Static assets (CSS, images)
 ├── package.json
@@ -80,7 +83,7 @@ travlr-admin/
 ├── src/app/                # Angular components, services, models
 ├── angular.json
 └── package.json
-    ```
+
 
 ## Reflection
 This project demonstrated the full MEAN stack in action:
