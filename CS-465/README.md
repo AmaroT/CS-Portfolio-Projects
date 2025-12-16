@@ -68,22 +68,19 @@ JSON serves as the interchange format between frontend and backend. The Express 
 
 ## Repository Structure
 ```    
-travlr/
-├──app.js                  # Main Express 
-├──server
-├──app_api/                # REST 
-
-API controllers and routes
-├── app_server/             # Customer site (routes, controllers, views)
+travlr/                     # Express backend (customer site + API)
+├── app.js                  # Main Express server entry point
+├── app_api/                # REST API controllers and routes
+├── app_server/             # Customer site (routes, controllers, Handlebars views)
 ├── public/                 # Static assets (CSS, images)
-├── package.json
-└── README.md
+├── package.json            # Dependencies and scripts
+└── README.md               # Project documentation
 
-travlr-admin/
+travlr-admin/               # Angular admin SPA
 ├── src/app/                # Angular components, services, models
-├── angular.json
-└── package.json
-
+├── angular.json            # Angular CLI configuration
+└── package.json            # Frontend dependencies and scripts
+```
 
 ## Reflection
 This project demonstrated the full MEAN stack in action:
